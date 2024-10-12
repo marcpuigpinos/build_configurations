@@ -1,0 +1,36 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 19,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "gcc-debug",
+      "description": "Configure using GCC with Debug settings",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build/debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_C_COMPILER": "gcc",
+        "CMAKE_CXX_COMPILER": "g++",
+        "CMAKE_C_FLAGS_RELEASE": "-Wall -Wextra",
+        "CMAKE_CXX_FLAGS_RELEASE": "-Wall -Wextra"
+      }
+    },
+    {
+      "name": "gcc-release",
+      "description": "Configure using GCC with Release settings",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build/release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_C_COMPILER": "gcc",
+        "CMAKE_CXX_COMPILER": "g++",
+        "CMAKE_C_FLAGS_RELEASE": "-O3 -Wall -Wextra",
+        "CMAKE_CXX_FLAGS_RELEASE": "-O3 -Wall -Wextra"
+      }
+    }
+  ]
+}
